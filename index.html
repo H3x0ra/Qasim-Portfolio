@@ -119,8 +119,40 @@
       </ul>
     </div>
 
-    <!-- TRYHACKME -->
-   <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757" style='border:none;'></iframe>
+    <!-- FEATURED TRYHACKME CARD -->
+<div class="relative">
+
+  <!-- Glow -->
+  <div class="absolute inset-0 rounded-2xl bg-cyan-400/30 blur-2xl animate-pulse"></div>
+
+  <!-- Card -->
+  <div class="relative bg-slate-900/90 border border-cyan-400 rounded-2xl p-6 backdrop-blur shadow-2xl">
+
+    <!-- Label -->
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-xs uppercase tracking-widest text-cyan-400">
+        Hands-on Cyber Labs
+      </span>
+      <span class="text-xs text-slate-400">
+        TryHackMe
+      </span>
+    </div>
+
+    <!-- Badge -->
+    <iframe
+      src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
+      class="w-[320px] h-[190px] mx-auto"
+      style="border:none;"
+      loading="lazy">
+    </iframe>
+
+    <!-- CTA -->
+    <p class="text-center text-sm text-slate-300 mt-4">
+      Ranked labs, real-world scenarios & continuous learning
+    </p>
+
+  </div>
+</div>
 
 
   </div>
