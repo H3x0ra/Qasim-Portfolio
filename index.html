@@ -89,22 +89,23 @@
       </div>
     </div>
 
-    <!-- RIGHT -->
-<div class="relative grid grid-cols-1 gap-6 max-w-md">
+   <!-- RIGHT -->
+<div class="grid gap-6 max-w-md">
 
-  <!-- PROFILE CARD (MAIN FOCUS) -->
-  <div class="relative mx-auto">
-    <div class="absolute inset-0 rounded-2xl bg-cyan-500/20 blur-2xl"></div>
-
-    <div class="relative z-10 bg-slate-900/80 border border-slate-700 rounded-2xl p-4 backdrop-blur">
-      <img src="assets/images/saianon.png"
-           class="w-44 h-44 object-cover rounded-xl"
-           alt="Qasim Profile">
+  <!-- PROFILE IMAGE -->
+  <div class="flex justify-center">
+    <div class="relative">
+      <div class="absolute inset-0 rounded-2xl bg-cyan-400/20 blur-xl"></div>
+      <div class="relative bg-slate-900/80 border border-slate-700 rounded-2xl p-3 backdrop-blur">
+        <img src="IMAGES/saianon.png"
+             class="w-36 h-36 object-cover rounded-xl"
+             alt="Qasim">
+      </div>
     </div>
   </div>
 
   <!-- INFO ROW -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="grid grid-cols-2 gap-4">
 
     <!-- WHY CHOOSE ME -->
     <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-4 backdrop-blur">
@@ -119,44 +120,28 @@
       </ul>
     </div>
 
-    <!-- FEATURED TRYHACKME CARD -->
-<div class="relative">
+    <!-- TRYHACKME (CONTROLLED FOCUS) -->
+    <div class="bg-slate-900/80 border border-cyan-400/60 rounded-xl p-4 backdrop-blur flex flex-col items-center justify-center">
 
-  <!-- Glow -->
-  <div class="absolute inset-0 rounded-2xl bg-cyan-400/30 blur-2xl animate-pulse"></div>
-
-  <!-- Card -->
-  <div class="relative bg-slate-900/90 border border-cyan-400 rounded-2xl p-6 backdrop-blur shadow-2xl">
-
-    <!-- Label -->
-    <div class="flex items-center justify-between mb-4">
-      <span class="text-xs uppercase tracking-widest text-cyan-400">
-        Hands-on Cyber Labs
+      <span class="text-[11px] uppercase tracking-widest text-cyan-400 mb-2">
+        Hands-on Labs
       </span>
-      <span class="text-xs text-slate-400">
-        TryHackMe
+
+      <iframe
+        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
+        class="w-[200px] h-[120px]"
+        style="border:none;"
+        loading="lazy">
+      </iframe>
+
+      <span class="text-[11px] text-slate-400 mt-2 text-center">
+        Daily practice & ranked labs
       </span>
     </div>
 
-    <!-- Badge -->
-    <iframe
-      src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
-      class="w-[320px] h-[190px] mx-auto"
-      style="border:none;"
-      loading="lazy">
-    </iframe>
-
-    <!-- CTA -->
-    <p class="text-center text-sm text-slate-300 mt-4">
-      Ranked labs, real-world scenarios & continuous learning
-    </p>
-
   </div>
 </div>
 
-
-  </div>
-</div>
 </section>
 
  
