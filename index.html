@@ -1,126 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Qasim Tawalbeh | Cybersecurity Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qasim Tawalbeh | Cybersecurity Engineer</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Qasim.</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- NAV -->
+<header class="nav">
+  <div class="logo">Qasim<span>.</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Qasim Tawalbeh</h1>
-    <h2>Cybersecurity Engineer | SOC | Blue Team</h2>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Hello, I’m <span>Qasim Tawalbeh</span></h1>
+    <h2>Cybersecurity Engineer</h2>
+    <h3><span class="typed"></span></h3>
+
     <p>
-      I secure systems, monitor threats, and respond to security incidents.
+      Cybersecurity graduate specializing in SOC, Active Directory security,
+      incident response, and defensive operations.
     </p>
-    <div class="hero-buttons">
-      <a href="#" class="btn primary">Download CV</a>
-      <a href="#contact" class="btn secondary">Contact Me</a>
+
+    <div class="hero-actions">
+      <a href="https://github.com/H3x0ra/Qasim-Porfolio.com/raw/main/Qasim_Cv.pdf" class="btn primary" download>Download CV</a>
+      <a href="#projects" class="btn ghost">View Projects</a>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h3>About Me</h3>
-    <p>
-      Cybersecurity graduate with hands-on experience in SOC operations,
-      incident response, system administration, and security monitoring.
-      Passionate about blue-team operations, threat detection, and continuous learning.
-    </p>
-    <p><strong>Location:</strong> Jordan 🇯🇴</p>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section dark">
-    <h3>Skills</h3>
-    <div class="skills-grid">
-
-      <div class="skill-card">
-        <h4>Cybersecurity</h4>
-        <ul>
-          <li>SIEM (Wazuh, Splunk)</li>
-          <li>SOC Monitoring</li>
-          <li>Incident Response</li>
-          <li>Log Analysis</li>
-          <li>Threat Detection</li>
-        </ul>
-      </div>
-
-      <div class="skill-card">
-        <h4>Systems</h4>
-        <ul>
-          <li>Linux Administration</li>
-          <li>Windows Server</li>
-          <li>Active Directory</li>
-          <li>Networking Basics</li>
-        </ul>
-      </div>
-
-      <div class="skill-card">
-        <h4>Tools & Tech</h4>
-        <ul>
-          <li>Git & GitHub</li>
-          <li>HTML & CSS</li>
-          <li>Basic JavaScript</li>
-        </ul>
-      </div>
-
+    <div class="socials">
+      <a href="https://github.com/H3x0ra" target="_blank"><i class='bx bxl-github'></i></a>
+      <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://wa.me/962782023773" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+      <a href="https://www.instagram.com/kase0m/" target="_blank"><i class='bx bxl-instagram'></i></a>
     </div>
-  </section>
+  </div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h3>Projects</h3>
+  <div class="hero-image">
+    <img src="IMAGES/saianon.png" alt="Qasim">
+    <div class="glow"></div>
+  </div>
+</section>
 
-    <div class="project-card">
-      <h4>SOC Home Lab</h4>
-      <p><strong>Tools:</strong> Wazuh, Kali Linux, Ubuntu</p>
+<!-- ABOUT -->
+<section id="about" class="section glass">
+  <h2>About Me</h2>
+  <p>
+    Passionate cybersecurity engineer with hands-on experience in
+    Active Directory attack & defense, SIEM monitoring, system hardening,
+    and vulnerability assessment.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <h2>Technical Skills</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Offensive Security</h3>
       <ul>
-        <li>Configured SIEM for log collection</li>
-        <li>Detected brute-force attacks</li>
-        <li>Monitored system events</li>
+        <li>Penetration Testing</li>
+        <li>AD Exploitation</li>
+        <li>Network Vulnerability Assessment</li>
       </ul>
     </div>
 
-    <div class="project-card">
-      <h4>Linux Security Hardening</h4>
-      <p><strong>Tools:</strong> Linux, Firewall, SSH</p>
+    <div class="card">
+      <h3>Defensive Security</h3>
       <ul>
-        <li>Secured SSH configurations</li>
-        <li>Applied firewall rules</li>
-        <li>Reduced attack surface</li>
+        <li>SIEM (Splunk)</li>
+        <li>Incident Response</li>
+        <li>Security Hardening</li>
       </ul>
     </div>
 
-  </section>
+    <div class="card">
+      <h3>Tools & Tech</h3>
+      <ul>
+        <li>Metasploit</li>
+        <li>Nmap</li>
+        <li>Bash & Python</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section dark">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:qasimtawalbeh.0@gmail.com">qasimtawalbeh.0@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/h3x0ra" target="_blank">github.com/h3x0ra</a></p>
-    <p>LinkedIn: <a href="#" target="_blank">Add your LinkedIn</a></p>
-  </section>
+<!-- PROJECTS -->
+<section id="projects" class="section glass">
+  <h2>Projects</h2>
 
-  <footer>
-    <p>© 2026 Qasim Tawalbeh. All rights reserved.</p>
-  </footer>
+  <div class="grid">
+    <div class="card project">
+      <h3>Active Directory Attack & Defense</h3>
+      <p>
+        Built enterprise AD lab, exploited vulnerabilities (mitm6, ADCS),
+        then hardened environment using GPO, LAPS, auditing.
+      </p>
+      <a href="https://github.com/H3x0ra/CapstoneProject" target="_blank">GitHub →</a>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="card project">
+      <h3>QRB Web Security Platform</h3>
+      <p>
+        OWASP Top 10 vulnerable web platform with labs for SQLi, XSS,
+        file inclusion, and uploads.
+      </p>
+      <a href="https://github.com/H3x0ra/GraduateProject_VulnerableWebsite" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="card project">
+      <h3>SrScanner Tool</h3>
+      <p>
+        Bash-based network reconnaissance tool using Nmap with fast scanning
+        and interactive menu.
+      </p>
+      <a href="https://github.com/H3x0ra/Sqr" target="_blank">GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" class="section">
+  <h2>Certificates</h2>
+
+  <div class="cert-slider">
+    <img id="certImg" src="IMAGES/Linux.jpg">
+  </div>
+</section>
+
+<footer>
+  © 2026 Qasim Tawalbeh
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
