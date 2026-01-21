@@ -371,27 +371,37 @@
 <!-- CERTIFICATES -->
 <section id="certificates" class="py-24 border-t border-slate-800 text-center">
   <h2 class="text-3xl font-semibold mb-8">Certificates</h2>
-  <img id="cert"
-     src="assets/images/Nashama.jpg"
-     class="mx-auto max-h-[420px] rounded-xl border border-cyan-400/40 mb-4">
 
+  <!-- FIXED FRAME -->
+  <div
+    class="relative mx-auto w-full max-w-3xl h-[420px] rounded-xl border border-cyan-400/40 bg-slate-900/60 overflow-hidden flex items-center justify-center">
 
+    <!-- IMAGE -->
+    <img id="cert-img"
+         class="hidden max-h-full max-w-full object-contain">
 
-  <!-- Certificate Navigation -->
-<div class="flex justify-center gap-4 mt-6">
-  <button id="cert-prev"
-    class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
-    ⟵ Previous
-  </button>
+    <!-- PDF -->
+    <iframe id="cert-pdf"
+            class="hidden w-full h-full border-0"
+            loading="lazy">
+    </iframe>
 
-  <button id="cert-next"
-    class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
-    Next ⟶
-  </button>
-</div>
+  </div>
 
+  <!-- Navigation Buttons -->
+  <div class="flex justify-center gap-4 mt-6">
+    <button id="cert-prev"
+      class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
+      ⟵ Previous
+    </button>
 
+    <button id="cert-next"
+      class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
+      Next ⟶
+    </button>
+  </div>
 </section>
+
 
 <footer class="py-8 text-center text-slate-500 border-t border-slate-800">
   © 2026 Qasim Tawalbeh
@@ -413,47 +423,41 @@
 
  /* Certificates slider (IMAGE PREVIEW + PDF DOWNLOAD) */
 const certs = [
-  {
-    img: "assets/images/Nashama.jpg",
-    pdf: "assets/certificates/Nashama.pdf"
-  },
-  {
-    img: "assets/images/CyberX.jpg",
-    pdf: "assets/certificates/CyberX.pdf"
-  },
-  {
-    img: "assets/images/PEH.jpg",
-    pdf: "assets/certificates/PEH.pdf"
-  },
-  {
-    img: "assets/images/THM-PreSecurity.jpg",
-    pdf: "assets/certificates/THM-PreSecurity.pdf"
-  },
-  {
-    img: "assets/images/LRSA.jpg",
-    pdf: "assets/certificates/LRSA.pdf"
-  },
-  {
-    img: "assets/images/Linux.jpg",
-    pdf: "assets/certificates/Linux.pdf"
-  },
-  {
-    img: "assets/images/LRPA.jpg",
-    pdf: "assets/certificates/LRPA.pdf"
-  }
+  { type: "pdf",   src: "assets/images/Nashama.pdf" },
+  { type: "image", src: "assets/images/CyberX.jpg" },
+  { type: "image", src: "assets/images/PEH.jpg" },
+  { type: "pdf",   src: "assets/images/THM-PreSecurity.pdf" },
+  { type: "image", src: "assets/images/LRSA.jpg" },
+  { type: "image", src: "assets/images/Linux.jpg" },
+  { type: "image", src: "assets/images/LRPA.jpg" }
 ];
 
-let i = 0;
-const certImg = document.getElementById("cert");
-const certLink = document.getElementById("cert-download");
 
+let i = 0;
+
+const imgEl = document.getElementById("cert-img");
+const pdfEl = document.getElementById("cert-pdf");
 
 function showCert(index) {
-  certImg.src = certs[index].img;
-  certLink.href = certs[index].pdf;
+  const cert = certs[index];
+
+  // Reset
+  imgEl.classList.add("hidden");
+  pdfEl.classList.add("hidden");
+
+  if (cert.type === "image") {
+    imgEl.src = cert.src;
+    imgEl.classList.remove("hidden");
+  } else {
+    pdfEl.src = cert.src;
+    pdfEl.classList.remove("hidden");
+  }
 }
 
-/* Auto slider */
+/* Initial load */
+showCert(i);
+
+/* Auto slide */
 let slider = setInterval(() => {
   i = (i + 1) % certs.length;
   showCert(i);
@@ -471,6 +475,7 @@ document.getElementById("cert-prev").addEventListener("click", () => {
   i = (i - 1 + certs.length) % certs.length;
   showCert(i);
 });
+
 
   /* Mobile menu toggle */
   const menuBtn = document.getElementById("menu-btn");
