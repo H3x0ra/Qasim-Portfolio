@@ -93,15 +93,20 @@
 <div class="flex flex-col gap-6 max-w-lg">
 
   <!-- TRYHACKME BADGE (TOP, FOCUSED) -->
-  <div class="flex justify-center">
-    <div class="bg-slate-900/80 border border-cyan-400/50 rounded-xl p-3 backdrop-blur shadow-md">
-      <iframe
-        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
-        style="border:none; width:240px; height:140px;"
-        loading="lazy">
-      </iframe>
-    </div>
+<div class="flex justify-center">
+  <div class="relative bg-slate-900/90 border-2 border-cyan-400 rounded-2xl p-5 backdrop-blur shadow-xl">
+
+    <!-- subtle glow -->
+    <div class="absolute inset-0 rounded-2xl bg-cyan-400/25 blur-2xl -z-10"></div>
+
+    <iframe
+      src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
+      style="border:none; width:320px; height:185px;"
+      loading="lazy">
+    </iframe>
+
   </div>
+</div>
 
   <!-- PROFILE + WHY CHOOSE ME -->
   <div class="flex gap-6 items-start">
@@ -109,7 +114,7 @@
     <!-- PROFILE IMAGE -->
     <div class="bg-slate-900/80 border border-slate-700 rounded-2xl p-3 backdrop-blur shrink-0">
       <img
-        src="IMAGES/saianon.png"
+        src="assets/images/saianon.png"
         alt="Qasim"
         class="w-36 h-36 object-cover rounded-xl"
       />
