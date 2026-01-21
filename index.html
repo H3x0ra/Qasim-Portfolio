@@ -1,204 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Qasim Tawalbeh | Cybersecurity Engineer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Qasim</title>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Icons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- Typed.js -->
+  <link rel="icon" type="image/png" href="IMAGES/sailogo.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
   <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      background:
-        radial-gradient(circle at top, #111827, #020617),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='none'%3E%3Cpath stroke='%231e293b' d='M0 30h60M30 0v60'/%3E%3C/svg%3E");
+      font-family: Arial, sans-serif;
+      background:#121212;
+      color:#f0f0f0;
     }
+
+    html { scroll-behavior:smooth; }
+
+    /* HEADER */
+    .header {
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#1e1e1e;
+      padding:20px;
+      z-index:100;
+    }
+
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      list-style:none;
+    }
+
+    .navbar a {
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active { color:#1e90ff; }
+
+    li::marker { content:none; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display:none;
+      position:absolute;
+      top:20px;
+      right:20px;
+      cursor:pointer;
+    }
+
+    .hamburger .bar {
+      width:30px;
+      height:3px;
+      margin:6px 0;
+      background:#fff;
+    }
+
+    @media(max-width:768px){
+      .navbar-links { display:none; flex-direction:column; background:#1e1e1e; position:absolute; right:20px; top:60px; padding:20px; }
+      .navbar-links.active { display:flex; }
+      .hamburger { display:block; }
+    }
+
+    /* HOME */
+    .home {
+      display:flex;
+      justify-content:space-between;
+      padding:120px 20px;
+    }
+
+    .home-content { max-width:600px; }
+    .home-content h2 { font-size:42px; }
+    .pro-text { color:#1e90ff; font-weight:bold; }
+
+    .home-sci a {
+      font-size:24px;
+      color:#fff;
+      margin-right:15px;
+    }
+
+    .home-sci a:hover { color:#1e90ff; }
+
+    .image img {
+      width:240px;
+      height:240px;
+      border-radius:50%;
+    }
+
+    /* CERTIFICATES */
+    #certificates {
+      padding:60px 20px;
+      text-align:center;
+      background:#000;
+    }
+
+    .certificates-container {
+      position:relative;
+      min-height:500px;
+    }
+
+    .certificate-card {
+      position:absolute;
+      width:100%;
+      opacity:0;
+      transition:opacity .5s;
+    }
+
+    .certificate-card.active { opacity:1; }
+
+    .certificate-card img {
+      max-width:80%;
+      border:3px solid #00ff00;
+      border-radius:10px;
+    }
+
+    /* PROJECTS */
+    #projects {
+      padding:80px 20px;
+      background:#000;
+    }
+
+    #projects h2 {
+      text-align:center;
+      color:#00ff00;
+      margin-bottom:50px;
+      font-size:2.5em;
+    }
+
+    .project-cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .project-card {
+      background:rgba(0,20,0,.85);
+      border:1px solid #00ff00;
+      border-radius:10px;
+      padding:25px;
+    }
+
+    .project-card h3 { color:#00ff00; margin-bottom:10px; }
+
+    .tech-tag {
+      background:rgba(0,255,0,.2);
+      color:#00ff00;
+      padding:5px 10px;
+      border-radius:15px;
+      font-size:.9em;
+      margin-right:5px;
+    }
+
+    .project-link {
+      display:inline-block;
+      margin-top:15px;
+      background:#00ff00;
+      color:#000;
+      padding:8px 20px;
+      border-radius:5px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .project-link:hover {
+      background:#000;
+      color:#00ff00;
+    }
+
+    /* SKILLS */
+    #skills { padding:60px 20px; }
+    .skills-container { max-width:800px; margin:auto; }
+    .category-title { color:#00ff00; margin:20px 0; }
+    .progress { background:#555; height:10px; border-radius:5px; }
+    .progress-bar { height:100%; background:#1e90ff; }
+
   </style>
 </head>
 
-<body class="text-slate-200">
+<body>
 
-<!-- NAV -->
-<header class="fixed top-0 w-full z-50 backdrop-blur bg-slate-900/70 border-b border-slate-800">
-  <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-    <div class="text-xl font-semibold">
-      Qasim<span class="text-cyan-400">.</span>
-    </div>
-    <nav class="space-x-8 text-sm">
-      <a href="#home" class="hover:text-cyan-400">Home</a>
-      <a href="#about" class="hover:text-cyan-400">About</a>
-      <a href="#skills" class="hover:text-cyan-400">Skills</a>
-      <a href="#projects" class="hover:text-cyan-400">Projects</a>
-      <a href="#certificates" class="hover:text-cyan-400">Certificates</a>
-    </nav>
+<header class="header">
+  <div class="hamburger" id="hamburger">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
   </div>
+  <nav class="navbar">
+    <ul class="navbar-links" id="navbarLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- HERO -->
-<section id="home" class="min-h-screen flex items-center pt-32">
-  <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-    <!-- LEFT -->
-    <div>
-      <p class="text-cyan-400 uppercase tracking-widest text-sm mb-4">
-        Cyber Security Personal Portfolio
-      </p>
-
-      <h1 class="text-5xl font-bold leading-tight">
-        Hello, I’m<br>
-        <span class="text-white">Qasim Tawalbeh</span>
-      </h1>
-
-      <h2 class="text-2xl mt-4 text-slate-400">
-        Cybersecurity Engineer
-      </h2>
-
-      <p class="mt-4 text-cyan-400">
-        <span id="typed"></span>
-      </p>
-
-      <p class="mt-6 max-w-xl text-slate-400">
-        Cybersecurity graduate with hands-on experience in SOC operations,
-        Active Directory attack & defense, incident response, and system hardening.
-      </p>
-
-      <div class="mt-8 flex gap-4">
-        <a href="https://github.com/H3x0ra/Qasim-Porfolio.com/raw/main/Qasim_Cv.pdf"
-           class="px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
-          Download CV
-        </a>
-        <a href="#projects"
-           class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
-          View Projects
-        </a>
-      </div>
-
-      <!-- Social -->
-      <div class="flex gap-4 mt-8 text-xl">
-        <a href="https://github.com/H3x0ra" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-github'></i></a>
-        <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://wa.me/962782023773" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-whatsapp'></i></a>
-        <a href="https://www.instagram.com/kase0m/" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-instagram'></i></a>
-      </div>
+<section id="home" class="home">
+  <div class="home-content">
+    <h2>Qasim Tawalbeh</h2>
+    <h4>Cyber Security Engineer<br><span class="pro-text"></span></h4>
+    <p>Passionate about cybersecurity and ethical practices.</p>
+    <div class="home-sci">
+      <a href="https://github.com/H3x0ra"><i class='bx bxl-github'></i></a>
+      <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/"><i class='bx bxl-linkedin'></i></a>
     </div>
-
-    <!-- RIGHT -->
-    <div class="relative">
-
-<div class="relative z-10 inline-block bg-slate-900/80 border border-slate-700 rounded-2xl p-3 backdrop-blur">
-  <img src="assets/images/saianon.png"
-       class="w-40 h-40 object-cover rounded-xl"
-       alt="Qasim Profile">
-</div>
-      
-
-      <!-- Floating Panel -->
-<div class="absolute w-64 bg-slate-900/90 border border-cyan-500/40 rounded-xl p-4 backdrop-blur"
-     style="top:0rem; right:1.5rem;">
-        <h4 class="text-cyan-400 font-semibold mb-2">Why Choose Me</h4>
-        <ul class="text-sm text-slate-300 space-y-2">
-          <li>✔ SOC & SIEM experience</li>
-          <li>✔ AD Attack & Defense</li>
-          <li>✔ Blue Team mindset</li>
-          <li>✔ Real labs & projects</li>
-        </ul>
-      </div>
-
-    </div>
+  </div>
+  <div class="image">
+    <img src="IMAGES/saianon.png">
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="py-24 border-t border-slate-800">
-  <div class="max-w-4xl mx-auto px-8 text-center">
-    <h2 class="text-3xl font-semibold mb-6">About Me</h2>
-    <p class="text-slate-400 leading-relaxed">
-      Passionate cybersecurity engineer focused on protecting systems,
-      detecting threats, and continuously improving defensive security posture.
-    </p>
+<section id="certificates">
+  <h2>Certifications</h2>
+  <div class="certificates-container">
+    <div class="certificate-card active"><img src="IMAGES/Linux.jpg"></div>
+    <div class="certificate-card"><img src="IMAGES/LRSA.jpg"></div>
+    <div class="certificate-card"><img src="IMAGES/LRPA.jpg"></div>
+    <div class="certificate-card"><img src="IMAGES/CyberX.jpg"></div>
+    <div class="certificate-card"><img src="IMAGES/PEH.jpg"></div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="py-24">
-  <div class="max-w-7xl mx-auto px-8">
-    <h2 class="text-3xl font-semibold mb-12 text-center">Technical Skills</h2>
+<!-- PROJECTS SECTION (AS REQUESTED) -->
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="project-cards">
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
-        <h3 class="text-cyan-400 mb-4">Offensive Security</h3>
-        <ul class="space-y-2 text-slate-300">
-          <li>Penetration Testing</li>
-          <li>Active Directory Exploitation</li>
-          <li>Network Vulnerability Assessment</li>
-        </ul>
-      </div>
-
-      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
-        <h3 class="text-cyan-400 mb-4">Defensive Security</h3>
-        <ul class="space-y-2 text-slate-300">
-          <li>SIEM (Splunk)</li>
-          <li>Incident Response</li>
-          <li>Security Hardening</li>
-        </ul>
-      </div>
-
-      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
-        <h3 class="text-cyan-400 mb-4">Tools & Tech</h3>
-        <ul class="space-y-2 text-slate-300">
-          <li>Metasploit</li>
-          <li>Nmap</li>
-          <li>Bash & Python</li>
-        </ul>
-      </div>
+    <div class="project-card">
+      <h3>Active Directory Attack & Defense Lab</h3>
+      <span class="tech-tag">Windows Server</span>
+      <span class="tech-tag">AD CS</span>
+      <span class="tech-tag">PowerShell</span>
+      <span class="tech-tag">Splunk</span>
+      <ul>
+        <li>Built vulnerable AD environment</li>
+        <li>Exploited mitm6 & ADCS vulnerabilities</li>
+        <li>Implemented LAPS & GPO hardening</li>
+      </ul>
+      <a class="project-link" href="https://github.com/H3x0ra/CapstoneProject">GitHub Repo</a>
     </div>
+
+    <div class="project-card">
+      <h3>QRB Web Security Platform</h3>
+      <span class="tech-tag">PHP</span>
+      <span class="tech-tag">MySQL</span>
+      <span class="tech-tag">OWASP</span>
+      <ul>
+        <li>SQLi, XSS, File Upload labs</li>
+        <li>150+ pages of content</li>
+      </ul>
+      <a class="project-link" href="https://github.com/H3x0ra/GraduateProject_VulnerableWebsite">GitHub Repo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>SrScanner Tool</h3>
+      <span class="tech-tag">Bash</span>
+      <span class="tech-tag">Nmap</span>
+      <ul>
+        <li>Network discovery</li>
+        <li>Fast port scanning</li>
+      </ul>
+      <a class="project-link" href="https://github.com/H3x0ra/Sqr">GitHub Repo</a>
+    </div>
+
   </div>
 </section>
 
-<!-- CERTIFICATES -->
-<section id="certificates" class="py-24 border-t border-slate-800 text-center">
-  <h2 class="text-3xl font-semibold mb-8">Certificates</h2>
-  <img id="cert" src="assets/images/Linux.jpg" class="mx-auto max-h-[420px] rounded-xl border border-cyan-400/40">
+<section id="skills">
+  <div class="skills-container">
+    <h2>Technical Skills</h2>
+    <h3 class="category-title">Offensive Security</h3>
+    <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+  </div>
 </section>
-
-<footer class="py-8 text-center text-slate-500 border-t border-slate-800">
-  © 2026 Qasim Tawalbeh
-</footer>
 
 <script>
-  new Typed("#typed", {
-    strings: [
-      "SOC Analyst",
-      "Active Directory Security",
-      "Incident Response",
-      "Ethical Hacking"
-    ],
-    typeSpeed: 60,
-    backSpeed: 40,
-    loop: true
+  const typed = new Typed(".pro-text", {
+    strings:["Penetration Testing","Cyber Security","Ethical Hacking"],
+    typeSpeed:80, backSpeed:40, loop:true
   });
-
-  const certs = [
-    "assets/images/Linux.jpg",
-    "assets/images/LRSA.jpg",
-    "assets/images/LRPA.jpg",
-    "assets/images/CyberX.jpg",
-    "assets/images/PEH.jpg"
-  ];
-  let i = 0;
-  setInterval(() => {
-    document.getElementById("cert").src = certs[i];
-    i = (i + 1) % certs.length;
-  }, 4000);
 </script>
 
 </body>
 </html>
-
