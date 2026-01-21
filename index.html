@@ -90,42 +90,47 @@
     </div>
 
     <!-- RIGHT -->
-    <div class="relative">
+<div class="relative grid grid-cols-1 gap-6 max-w-md">
 
-      <!-- Profile Card -->
-      <div class="relative z-10 inline-block bg-slate-900/80 border border-slate-700 rounded-2xl p-3 backdrop-blur">
-  <img src="assets/images/saianon.png"
-       class="w-40 h-40 object-cover rounded-xl"
-       alt="Qasim Profile">
-</div>
+  <!-- PROFILE CARD (MAIN FOCUS) -->
+  <div class="relative mx-auto">
+    <div class="absolute inset-0 rounded-2xl bg-cyan-500/20 blur-2xl"></div>
 
-      
-  <!-- TryHackMe Badge -->
-  <div class="bg-slate-900/80 border border-cyan-400/40 rounded-2xl p-4 backdrop-blur shadow-lg">
-    <iframe
-      src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
-      class="w-[300px] h-[180px]"
-      style="border:none;"
-      loading="lazy">
-    </iframe>
-  </div>
-
-
-
-      <!-- Floating Panel -->
-<div class="absolute w-64 bg-slate-900/90 border border-cyan-500/40 rounded-xl p-4 backdrop-blur"
-     style="top:0rem; right:1.5rem;">
-        <h4 class="text-cyan-400 font-semibold mb-2">Why Choose Me</h4>
-        <ul class="text-sm text-slate-300 space-y-2">
-          <li>✔ SOC & SIEM experience</li>
-          <li>✔ AD Attack & Defense</li>
-          <li>✔ Blue Team mindset</li>
-          <li>✔ Real labs & projects</li>
-        </ul>
-      </div>
-
+    <div class="relative z-10 bg-slate-900/80 border border-slate-700 rounded-2xl p-4 backdrop-blur">
+      <img src="IMAGES/saianon.png"
+           class="w-44 h-44 object-cover rounded-xl"
+           alt="Qasim Profile">
     </div>
   </div>
+
+  <!-- INFO ROW -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <!-- WHY CHOOSE ME -->
+    <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-4 backdrop-blur">
+      <h4 class="text-cyan-400 font-semibold mb-3 text-sm">
+        Why Choose Me
+      </h4>
+      <ul class="text-xs text-slate-300 space-y-2">
+        <li>✔ SOC & SIEM experience</li>
+        <li>✔ AD Attack & Defense</li>
+        <li>✔ Blue Team mindset</li>
+        <li>✔ Real labs & projects</li>
+      </ul>
+    </div>
+
+    <!-- TRYHACKME -->
+    <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-3 backdrop-blur flex items-center justify-center">
+      <iframe
+        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
+        class="w-[220px] h-[130px]"
+        style="border:none;"
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+</div>
 </section>
 
  
