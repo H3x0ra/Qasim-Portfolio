@@ -452,12 +452,30 @@ let i = 0;
 const certImg = document.getElementById("cert");
 const certLink = document.getElementById("cert-download");
 
-setInterval(() => {
-  certImg.src = certs[i].img;
-  certLink.href = certs[i].pdf;
+
+function showCert(index) {
+  certImg.src = certs[index].img;
+  certLink.href = certs[index].pdf;
+}
+
+/* Auto slider */
+let slider = setInterval(() => {
   i = (i + 1) % certs.length;
+  showCert(i);
 }, 4000);
-;
+
+/* Buttons */
+document.getElementById("cert-next").addEventListener("click", () => {
+  clearInterval(slider);
+  i = (i + 1) % certs.length;
+  showCert(i);
+});
+
+document.getElementById("cert-prev").addEventListener("click", () => {
+  clearInterval(slider);
+  i = (i - 1 + certs.length) % certs.length;
+  showCert(i);
+});
 
   /* Mobile menu toggle */
   const menuBtn = document.getElementById("menu-btn");
