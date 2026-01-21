@@ -371,7 +371,17 @@
 <!-- CERTIFICATES -->
 <section id="certificates" class="py-24 border-t border-slate-800 text-center">
   <h2 class="text-3xl font-semibold mb-8">Certificates</h2>
-  <img id="cert" src="assets/images/Nashama.pdf" class="mx-auto max-h-[420px] rounded-xl border border-cyan-400/40">
+  <img id="cert"
+     src="assets/images/Nashama.jpg"
+     class="mx-auto max-h-[420px] rounded-xl border border-cyan-400/40 mb-4">
+
+<a id="cert-download"
+   href="assets/certificates/Nashama.pdf"
+   download
+   class="text-cyan-400 text-sm hover:underline">
+  Download Certificate (PDF)
+</a>
+
 </section>
 
 <footer class="py-8 text-center text-slate-500 border-t border-slate-800">
@@ -392,21 +402,48 @@
     loop: true
   });
 
-  /* Certificates slider */
-  const certs = [
-    "assets/images/Nashama.pdf",
-    "assets/images/CyberX.jpg",
-    "assets/images/PEH.jpg"
-    "assets/images/THM-PreSecurity.pdf",
-    "assets/images/LRSA.jpg",
-    "assets/images/Linux.jpg",
-    "assets/images/LRPA.jpg",
-  ];
-  let i = 0;
-  setInterval(() => {
-    document.getElementById("cert").src = certs[i];
-    i = (i + 1) % certs.length;
-  }, 4000);
+ /* Certificates slider (IMAGE PREVIEW + PDF DOWNLOAD) */
+const certs = [
+  {
+    img: "assets/images/Nashama.jpg",
+    pdf: "assets/certificates/Nashama.pdf"
+  },
+  {
+    img: "assets/images/CyberX.jpg",
+    pdf: "assets/certificates/CyberX.pdf"
+  },
+  {
+    img: "assets/images/PEH.jpg",
+    pdf: "assets/certificates/PEH.pdf"
+  },
+  {
+    img: "assets/images/THM-PreSecurity.jpg",
+    pdf: "assets/certificates/THM-PreSecurity.pdf"
+  },
+  {
+    img: "assets/images/LRSA.jpg",
+    pdf: "assets/certificates/LRSA.pdf"
+  },
+  {
+    img: "assets/images/Linux.jpg",
+    pdf: "assets/certificates/Linux.pdf"
+  },
+  {
+    img: "assets/images/LRPA.jpg",
+    pdf: "assets/certificates/LRPA.pdf"
+  }
+];
+
+let i = 0;
+const certImg = document.getElementById("cert");
+const certLink = document.getElementById("cert-download");
+
+setInterval(() => {
+  certImg.src = certs[i].img;
+  certLink.href = certs[i].pdf;
+  i = (i + 1) % certs.length;
+}, 4000);
+;
 
   /* Mobile menu toggle */
   const menuBtn = document.getElementById("menu-btn");
