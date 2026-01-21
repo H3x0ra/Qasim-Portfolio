@@ -90,44 +90,45 @@
     </div>
 
    <!-- RIGHT -->
-<div class="flex gap-6 items-start max-w-lg">
+<div class="flex flex-col gap-6 max-w-lg">
 
-  <!-- PROFILE + TRYHACKME -->
-  <div class="relative">
-
-    <!-- Profile Image Card -->
-    <div class="relative bg-slate-900/80 border border-slate-700 rounded-2xl p-3 backdrop-blur">
-      <img
-        src="IMAGES/saianon.png"
-        alt="Qasim"
-        class="w-40 h-40 object-cover rounded-xl"
-      />
-    </div>
-
-    <!-- TryHackMe Badge (ORIGINAL IFRAME) -->
-    <div class="absolute -bottom-6 -right-10 bg-slate-900 border border-cyan-400/60 rounded-xl p-2 shadow-xl">
+  <!-- TRYHACKME BADGE (TOP, FOCUSED) -->
+  <div class="flex justify-center">
+    <div class="bg-slate-900/80 border border-cyan-400/50 rounded-xl p-3 backdrop-blur shadow-md">
       <iframe
         src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1212757"
-        style="border:none; width:260px; height:150px;"
+        style="border:none; width:240px; height:140px;"
         loading="lazy">
       </iframe>
     </div>
-
   </div>
 
-  <!-- WHY CHOOSE ME -->
-  <div class="bg-slate-900/80 border border-slate-700 rounded-2xl p-5 backdrop-blur flex-1">
-    <h4 class="text-cyan-400 font-semibold mb-4">
-      Why Choose Me
-    </h4>
-    <ul class="text-sm text-slate-300 space-y-3">
-      <li>✔ SOC & SIEM experience</li>
-      <li>✔ Active Directory Attack & Defense</li>
-      <li>✔ Blue Team mindset</li>
-      <li>✔ Real labs & projects</li>
-    </ul>
-  </div>
+  <!-- PROFILE + WHY CHOOSE ME -->
+  <div class="flex gap-6 items-start">
 
+    <!-- PROFILE IMAGE -->
+    <div class="bg-slate-900/80 border border-slate-700 rounded-2xl p-3 backdrop-blur shrink-0">
+      <img
+        src="IMAGES/saianon.png"
+        alt="Qasim"
+        class="w-36 h-36 object-cover rounded-xl"
+      />
+    </div>
+
+    <!-- WHY CHOOSE ME -->
+    <div class="bg-slate-900/80 border border-slate-700 rounded-2xl p-5 backdrop-blur flex-1">
+      <h4 class="text-cyan-400 font-semibold mb-4">
+        Why Choose Me
+      </h4>
+      <ul class="text-sm text-slate-300 space-y-3">
+        <li>✔ SOC & SIEM experience</li>
+        <li>✔ Active Directory Attack & Defense</li>
+        <li>✔ Blue Team mindset</li>
+        <li>✔ Real labs & projects</li>
+      </ul>
+    </div>
+
+  </div>
 </div>
 
 </section>
