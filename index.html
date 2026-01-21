@@ -1,151 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qasim Tawalbeh | Cybersecurity Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qasim Tawalbeh | Cybersecurity Engineer</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top, #111827, #020617),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='none'%3E%3Cpath stroke='%231e293b' d='M0 30h60M30 0v60'/%3E%3C/svg%3E");
+    }
+  </style>
 </head>
-<body>
+
+<body class="text-slate-200">
 
 <!-- NAV -->
-<header class="nav">
-  <div class="logo">Qasim<span>.</span></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
-  </nav>
+<header class="fixed top-0 w-full z-50 backdrop-blur bg-slate-900/70 border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+    <div class="text-xl font-semibold">
+      Qasim<span class="text-cyan-400">.</span>
+    </div>
+    <nav class="space-x-8 text-sm">
+      <a href="#home" class="hover:text-cyan-400">Home</a>
+      <a href="#about" class="hover:text-cyan-400">About</a>
+      <a href="#skills" class="hover:text-cyan-400">Skills</a>
+      <a href="#projects" class="hover:text-cyan-400">Projects</a>
+      <a href="#certificates" class="hover:text-cyan-400">Certificates</a>
+    </nav>
+  </div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-text">
-    <h1>Hello, I’m <span>Qasim Tawalbeh</span></h1>
-    <h2>Cybersecurity Engineer</h2>
-    <h3><span class="typed"></span></h3>
+<section id="home" class="min-h-screen flex items-center pt-32">
+  <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-    <p>
-      Cybersecurity graduate specializing in SOC, Active Directory security,
-      incident response, and defensive operations.
-    </p>
+    <!-- LEFT -->
+    <div>
+      <p class="text-cyan-400 uppercase tracking-widest text-sm mb-4">
+        Cyber Security Personal Portfolio
+      </p>
 
-    <div class="hero-actions">
-      <a href="https://github.com/H3x0ra/Qasim-Porfolio.com/raw/main/Qasim_Cv.pdf" class="btn primary" download>Download CV</a>
-      <a href="#projects" class="btn ghost">View Projects</a>
+      <h1 class="text-5xl font-bold leading-tight">
+        Hello, I’m<br>
+        <span class="text-white">Qasim Tawalbeh</span>
+      </h1>
+
+      <h2 class="text-2xl mt-4 text-slate-400">
+        Cybersecurity Engineer
+      </h2>
+
+      <p class="mt-4 text-cyan-400">
+        <span id="typed"></span>
+      </p>
+
+      <p class="mt-6 max-w-xl text-slate-400">
+        Cybersecurity graduate with hands-on experience in SOC operations,
+        Active Directory attack & defense, incident response, and system hardening.
+      </p>
+
+      <div class="mt-8 flex gap-4">
+        <a href="https://github.com/H3x0ra/Qasim-Porfolio.com/raw/main/Qasim_Cv.pdf"
+           class="px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
+          Download CV
+        </a>
+        <a href="#projects"
+           class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
+          View Projects
+        </a>
+      </div>
+
+      <!-- Social -->
+      <div class="flex gap-4 mt-8 text-xl">
+        <a href="https://github.com/H3x0ra" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://wa.me/962782023773" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://www.instagram.com/kase0m/" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-instagram'></i></a>
+      </div>
     </div>
 
-    <div class="socials">
-      <a href="https://github.com/H3x0ra" target="_blank"><i class='bx bxl-github'></i></a>
-      <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-      <a href="https://wa.me/962782023773" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-      <a href="https://www.instagram.com/kase0m/" target="_blank"><i class='bx bxl-instagram'></i></a>
-    </div>
-  </div>
+    <!-- RIGHT -->
+    <div class="relative">
 
-  <div class="hero-image">
-    <img src="IMAGES/saianon.png" alt="Qasim">
-    <div class="glow"></div>
+      <!-- Profile Card -->
+      <div class="relative z-10 bg-slate-900/80 border border-slate-700 rounded-2xl p-6 backdrop-blur">
+        <img src="IMAGES/saianon.png" class="rounded-xl mx-auto w-64" alt="">
+      </div>
+
+      <!-- Floating Panel -->
+      <div class="absolute -right-10 top-20 w-64 bg-slate-900/90 border border-cyan-500/40 rounded-xl p-4 backdrop-blur">
+        <h4 class="text-cyan-400 font-semibold mb-2">Why Choose Me</h4>
+        <ul class="text-sm text-slate-300 space-y-2">
+          <li>✔ SOC & SIEM experience</li>
+          <li>✔ AD Attack & Defense</li>
+          <li>✔ Blue Team mindset</li>
+          <li>✔ Real labs & projects</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section glass">
-  <h2>About Me</h2>
-  <p>
-    Passionate cybersecurity engineer with hands-on experience in
-    Active Directory attack & defense, SIEM monitoring, system hardening,
-    and vulnerability assessment.
-  </p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section">
-  <h2>Technical Skills</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Offensive Security</h3>
-      <ul>
-        <li>Penetration Testing</li>
-        <li>AD Exploitation</li>
-        <li>Network Vulnerability Assessment</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Defensive Security</h3>
-      <ul>
-        <li>SIEM (Splunk)</li>
-        <li>Incident Response</li>
-        <li>Security Hardening</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Tools & Tech</h3>
-      <ul>
-        <li>Metasploit</li>
-        <li>Nmap</li>
-        <li>Bash & Python</li>
-      </ul>
-    </div>
+<section id="about" class="py-24 border-t border-slate-800">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+    <p class="text-slate-400 leading-relaxed">
+      Passionate cybersecurity engineer focused on protecting systems,
+      detecting threats, and continuously improving defensive security posture.
+    </p>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section glass">
-  <h2>Projects</h2>
+<!-- SKILLS -->
+<section id="skills" class="py-24">
+  <div class="max-w-7xl mx-auto px-8">
+    <h2 class="text-3xl font-semibold mb-12 text-center">Technical Skills</h2>
 
-  <div class="grid">
-    <div class="card project">
-      <h3>Active Directory Attack & Defense</h3>
-      <p>
-        Built enterprise AD lab, exploited vulnerabilities (mitm6, ADCS),
-        then hardened environment using GPO, LAPS, auditing.
-      </p>
-      <a href="https://github.com/H3x0ra/CapstoneProject" target="_blank">GitHub →</a>
-    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-cyan-400 mb-4">Offensive Security</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>Penetration Testing</li>
+          <li>Active Directory Exploitation</li>
+          <li>Network Vulnerability Assessment</li>
+        </ul>
+      </div>
 
-    <div class="card project">
-      <h3>QRB Web Security Platform</h3>
-      <p>
-        OWASP Top 10 vulnerable web platform with labs for SQLi, XSS,
-        file inclusion, and uploads.
-      </p>
-      <a href="https://github.com/H3x0ra/GraduateProject_VulnerableWebsite" target="_blank">GitHub →</a>
-    </div>
+      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-cyan-400 mb-4">Defensive Security</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>SIEM (Splunk)</li>
+          <li>Incident Response</li>
+          <li>Security Hardening</li>
+        </ul>
+      </div>
 
-    <div class="card project">
-      <h3>SrScanner Tool</h3>
-      <p>
-        Bash-based network reconnaissance tool using Nmap with fast scanning
-        and interactive menu.
-      </p>
-      <a href="https://github.com/H3x0ra/Sqr" target="_blank">GitHub →</a>
+      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-cyan-400 mb-4">Tools & Tech</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>Metasploit</li>
+          <li>Nmap</li>
+          <li>Bash & Python</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CERTIFICATES -->
-<section id="certificates" class="section">
-  <h2>Certificates</h2>
-
-  <div class="cert-slider">
-    <img id="certImg" src="IMAGES/Linux.jpg">
-  </div>
+<section id="certificates" class="py-24 border-t border-slate-800 text-center">
+  <h2 class="text-3xl font-semibold mb-8">Certificates</h2>
+  <img id="cert" src="IMAGES/Linux.jpg" class="mx-auto max-h-[420px] rounded-xl border border-cyan-400/40">
 </section>
 
-<footer>
+<footer class="py-8 text-center text-slate-500 border-t border-slate-800">
   © 2026 Qasim Tawalbeh
 </footer>
 
-<script src="script.js"></script>
+<script>
+  new Typed("#typed", {
+    strings: [
+      "SOC Analyst",
+      "Active Directory Security",
+      "Incident Response",
+      "Ethical Hacking"
+    ],
+    typeSpeed: 60,
+    backSpeed: 40,
+    loop: true
+  });
+
+  const certs = [
+    "IMAGES/Linux.jpg",
+    "IMAGES/LRSA.jpg",
+    "IMAGES/LRPA.jpg",
+    "IMAGES/CyberX.jpg",
+    "IMAGES/PEH.jpg"
+  ];
+  let i = 0;
+  setInterval(() => {
+    document.getElementById("cert").src = certs[i];
+    i = (i + 1) % certs.length;
+  }, 4000);
+</script>
+
 </body>
 </html>
+
