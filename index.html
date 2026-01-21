@@ -1,868 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Qasim</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qasim Tawalbeh | Cybersecurity Engineer</title>
 
-  <link rel="icon" type="image/png" href="IMAGES/sailogo.png">
-  <link rel="stylesheet" href="CSS/style.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Typed.js -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      background-color: #121212; /* Dark background */
-      color: #f0f0f0; /* Light text */
-    }
-
-    /* Header */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #1e1e1e; /* Dark header */
-      padding: 20px;
-      z-index: 100;
-    }
-
-    .header .logo {
-      font-size: 24px;
-      color: #00ff00; /* Green text */
-      text-decoration: none;
-    }
-
-    li::marker {
-      content: none;
-    }
-
-    .navbar {
-      list-style-type: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover,
-    .navbar a.active {
-      color: #1e90ff; /* Blue on hover */
-    }
-
-    /* Hamburger Icon */
-    .hamburger {
-      display: none;
-      font-size: 30px;
-      color: #fff;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 110;
-    }
-
-    .hamburger .bar {
-      width: 30px;
-      height: 3px;
-      margin: 6px 0;
-      background-color: #fff;
-      border-radius: 3px;
-    }
-
-    /* Mobile Navbar */
-    .navbar-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-links a:hover,
-    .navbar-links a.active {
-      color: #1e90ff;
-    }
-
-    /* Media query for mobile screens */
-    @media (max-width: 768px) {
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Below the header */
-        right: 20px;
-        background-color: #1e1e1e;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      .navbar-links a {
-        margin-bottom: 15px;
-        font-size: 20px;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .navbar-links.active {
-        display: flex;
-      }
-    }
-
-    /* Home Section */
-    .home {
-      display: flex;
-      justify-content: space-between;
-      padding: 80px 20px;
-    }
-
-    .home-content {
-      max-width: 600px;
-    }
-
-    .home-content h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    .home-content .pro-text {
-      font-weight: bold;
-      color: #1e90ff;
-    }
-
-    .home-content p {
-      margin: 20px 0;
-    }
-
-    .home-sci {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .home-sci a {
-      font-size: 24px;
-      color: #fff;
-      transition: color 0.3s ease;
-    }
-
-    .home-sci a:hover {
-      color: #1e90ff;
-    }
-
-    .home-img {
-      position: relative;
-      margin-right: -38px;
-    }
-
-    .glowing-circle {
-      position: relative;
-      display: inline-block;
-    }
-
-    .glowing-circle span {
-      position: absolute;
-      border-radius: 50%;
-      background: #1e90ff;
-      animation: glowing 1.5s ease-in-out infinite;
-    }
-
-    .glowing-circle span:nth-child(1) {
-      width: 120px;
-      height: 120px;
-      animation-delay: 0s;
-    }
-
-    .glowing-circle span:nth-child(2) {
-      width: 160px;
-      height: 160px;
-      animation-delay: 0.5s;
-    }
-
-    .image img {
-      width: 241px;
-      height: 234px;
-      border-radius: 50%;
-    }
-
-    /* Skills Section */
-    .skill-category {
-      margin-bottom: 40px;
-      width: 100%;
-      max-width: 800px;
-    }
-
-    .category-title {
-      color: #00ff00; /* Green title */
-      font-size: 1.8em;
-      margin: 25px 0;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #00ff00;
-      text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-    }
-
-    .skill h4 {
-      font-size: 1.2em;
-      color: #fff;
-      margin-bottom: 5px;
-    }
-
-    .progress {
-      background: rgba(255, 255, 255, 0.1);
-      height: 12px;
-    }
-
-    .progress-bar {
-      background: linear-gradient(90deg, #00ff00, #1e90ff);
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-    }
-
-    .skill p {
-      color: #00ff00;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-
-    #skills {
-      padding: 60px 20px;
-    }
-
-    #skills h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .skill {
-      width: 80%;
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
-
-    .skill h3 {
-      font-size: 24px;
-    }
-
-    .progress {
-      width: 100%;
-      height: 10px;
-      background-color: #555;
-      border-radius: 5px;
-      margin-top: 5px;
-    }
-
-    .progress-bar {
-      height: 100%;
-      background-color: #1e90ff;
-      border-radius: 5px;
-    }
-
-    .skill p {
-      text-align: right;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    /* Projects Section */
-    #projects {
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.9);
-    }
-
-    #projects h2 {
-      color: #00ff00; /* Green text */
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 50px;
-      text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    }
-
-    .project-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .project-card {
-      background: rgba(0, 20, 0, 0.8);
-      border: 1px solid #00ff00; /* Green border */
-      border-radius: 10px;
-      padding: 25px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, #00ff00, transparent);
-      animation: animate 6s linear infinite;
-    }
-
-    @keyframes animate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .project-card-content {
-      position: relative;
-      background: #363131;
-      padding: 20px;
-      border-radius: 8px;
-      height: 100%;
-    }
-
-    .project-card h3 {
-      color: #00ff00;
-      font-size: 1.5em;
-      margin-bottom: 15px;
-    }
-
-    .project-card p {
-      color: #fff;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-
-    .tech-tag {
-      background: rgba(0, 255, 0, 0.2);
-      color: #00ff00;
-      padding: 5px 10px;
-      border-radius: 15px;
-      font-size: 0.9em;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 15px;
-      margin-top: auto;
-    }
-
-    .project-link {
-      background: #00ff00; /* Green buttons */
-      color: #000;
-      padding: 8px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .project-link:hover {
-      background: #000;
-      color: #00ff00;
-      box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-    }
-
-    @media (max-width: 768px) {
-      .project-cards {
-        grid-template-columns: 1fr;
-      }
-      
-      .project-card {
-        margin: 0 10px;
-      }
-    }
-
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Cv Section Styling */
-    .cv-section {
-      padding: 60px 20px;
-      text-align: center;
-      margin-top: -4cm;
-    }
-
-    .cv-section h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #fff;
-    }
-
-    /* Container for button and image */
-    .cv-content {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      align-items: center;
-    }
-
-    /* CV Button Styling */
-    .cv-button {
-      padding: 15px 30px;
-      background-color: #1e90ff; /* Blue background */
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .cv-button:hover {
-      background-color: #45a049; /* Green on hover */
-      transform: scale(1.05);
-    }
-
-    /* Profile Image Styling */
-    .cv-image img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 2px solid green;
-    }
-
-    /* Certificate Section Styling */
-    #certificates {
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .certificates-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto;
-      min-height: 600px;
-    }
-
-    .certificate-card {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .certificate-card.active {
-      opacity: 1;
-    }
-
-    .certificate-card img {
-      width: auto;
-      height: auto;
-      max-width: 80%;
-      max-height: 550px;
-      border: 3px solid #00ff00;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-    }
-
-    .nav-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .nav-btn {
-      background: rgba(0, 255, 0, 0.5);
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 5px;
-      text-transform: uppercase;
-    }
-
-    .nav-btn:hover {
-      background: #00ff00;
-      box-shadow: 0 0 15px #00ff00;
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-      .certificates-container {
-        min-height: 400px;
-      }
-      
-      .certificate-card img {
-        max-width: 90%;
-        max-height: 380px;
-      }
-      
-      .nav-buttons {
-        margin-top: 20px;
-        gap: 10px;
-      }
-      
-      .nav-btn {
-        padding: 8px 15px;
-        font-size: 14px;
-      }
+      background:
+        radial-gradient(circle at top, #111827, #020617),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='none'%3E%3Cpath stroke='%231e293b' d='M0 30h60M30 0v60'/%3E%3C/svg%3E");
     }
   </style>
 </head>
-<body>
 
-  <canvas id="matrixCanvas"></canvas>
-  <script src="JAVASCRIPT/matrix.js"></script>
+<body class="text-slate-200">
 
-  <header class="header">
-    <a href="IMAGES/PortfolioImage.jpg" class="logo" style="
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      background-image: url('IMAGES/PortfolioImage.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    "></a>
-        
-    <!-- Hamburger Icon -->
-    <div class="hamburger" id="hamburger">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 backdrop-blur bg-slate-900/70 border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+    <div class="text-xl font-semibold">
+      Qasim<span class="text-cyan-400">.</span>
     </div>
-
-    <!-- Navbar Links -->
-    <nav class="navbar">
-      <ul class="navbar-links" id="navbarLinks">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-      </ul>
+    <nav class="space-x-8 text-sm">
+      <a href="#home" class="hover:text-cyan-400">Home</a>
+      <a href="#about" class="hover:text-cyan-400">About</a>
+      <a href="#skills" class="hover:text-cyan-400">Skills</a>
+      <a href="#projects" class="hover:text-cyan-400">Projects</a>
+      <a href="#certificates" class="hover:text-cyan-400">Certificates</a>
     </nav>
-  </header>
-  
-  <section id="home" class="home">
-    <div class="home-content">
-      <h3 class="mu">Hello, Iam </h3>
-      <h2>Qasim Tawalbeh</h2>
-      <h4>Cyber Security Engineer
-      <br> <span class="pro-text"></span></h4>
-      <p>This portfolio highlights my  <br>
-         passion for cybersecurity and my <br>
-         commitment to ethical practices...</p>
+  </div>
+</header>
 
-      <div class="home-sci">
-        <a href="https://github.com/H3x0ra" target="_blank"><i class='bx bxl-github'></i></a>
-        <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://wa.me/962782023773" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-        <a href="https://www.instagram.com/kase0m/" target="_blank"><i class='bx bxl-instagram'></i></a>
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-32">
+  <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT -->
+    <div>
+      <p class="text-cyan-400 uppercase tracking-widest text-sm mb-4">
+        Cyber Security Personal Portfolio
+      </p>
+
+      <h1 class="text-5xl font-bold leading-tight">
+        Hello, I’m<br>
+        <span class="text-white">Qasim Tawalbeh</span>
+      </h1>
+
+      <h2 class="text-2xl mt-4 text-slate-400">
+        Cybersecurity Engineer
+      </h2>
+
+      <p class="mt-4 text-cyan-400">
+        <span id="typed"></span>
+      </p>
+
+      <p class="mt-6 max-w-xl text-slate-400">
+        Cybersecurity graduate with hands-on experience in SOC operations,
+        Active Directory attack & defense, incident response, and system hardening.
+      </p>
+
+      <div class="mt-8 flex gap-4">
+        <a href="https://github.com/H3x0ra/Qasim-Porfolio.com/raw/main/Qasim_Cv.pdf"
+           class="px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
+          Download CV
+        </a>
+        <a href="#projects"
+           class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">
+          View Projects
+        </a>
       </div>
-               <a href="https://github.com/H3x0ra/Qasim-Porfolio.com/raw/main/Qasim_Cv.pdf" class="btn-box" download="QasimTawalbeh.Cv.docx">Download CV</a>
-    </div>  
-    <div class="home-img">
-      <div class="glowing-circle">
-        <span></span>
-        <span></span>
-        <div class="image">
-          <img src="IMAGES/saianon.png" alt="">
-        </div>
+
+      <!-- Social -->
+      <div class="flex gap-4 mt-8 text-xl">
+        <a href="https://github.com/H3x0ra" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://wa.me/962782023773" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://www.instagram.com/kase0m/" target="_blank" class="hover:text-cyan-400"><i class='bx bxl-instagram'></i></a>
       </div>
     </div>
-  </section>
-  
-  <!-- Certificate Section -->
-  <section id="certificates">
-    <h2 style="font-size:2.5em; text-align:center; color:#00ff00; text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);">Certifications</h2>
-    <div class="certificates-container">
-      <!-- Certificate Images -->
-      <div class="certificate-card active">
-        <img src="IMAGES/Linux.jpg" alt="Linux Certification">
+
+    <!-- RIGHT -->
+    <div class="relative">
+
+      <!-- Profile Card -->
+      <div class="relative z-10 bg-slate-900/80 border border-slate-700 rounded-2xl p-6 backdrop-blur">
+        <img src="IMAGES/saianon.png" class="rounded-xl mx-auto w-64" alt="">
       </div>
-      <div class="certificate-card">
-        <img src="IMAGES/LRSA.jpg" alt="LRSA Certification">
+
+      <!-- Floating Panel -->
+      <div class="absolute -right-10 top-20 w-64 bg-slate-900/90 border border-cyan-500/40 rounded-xl p-4 backdrop-blur">
+        <h4 class="text-cyan-400 font-semibold mb-2">Why Choose Me</h4>
+        <ul class="text-sm text-slate-300 space-y-2">
+          <li>✔ SOC & SIEM experience</li>
+          <li>✔ AD Attack & Defense</li>
+          <li>✔ Blue Team mindset</li>
+          <li>✔ Real labs & projects</li>
+        </ul>
       </div>
-      <div class="certificate-card">
-        <img src="IMAGES/LRPA.jpg" alt="LRPA Certification">
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 border-t border-slate-800">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+    <p class="text-slate-400 leading-relaxed">
+      Passionate cybersecurity engineer focused on protecting systems,
+      detecting threats, and continuously improving defensive security posture.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24">
+  <div class="max-w-7xl mx-auto px-8">
+    <h2 class="text-3xl font-semibold mb-12 text-center">Technical Skills</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-cyan-400 mb-4">Offensive Security</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>Penetration Testing</li>
+          <li>Active Directory Exploitation</li>
+          <li>Network Vulnerability Assessment</li>
+        </ul>
       </div>
-      <div class="certificate-card">
-        <img src="IMAGES/CyberX.jpg" alt="CyberX Certification">
+
+      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-cyan-400 mb-4">Defensive Security</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>SIEM (Splunk)</li>
+          <li>Incident Response</li>
+          <li>Security Hardening</li>
+        </ul>
       </div>
-      <div class="certificate-card">
-        <img src="IMAGES/PEH.jpg" alt="PEH Certification">
+
+      <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-cyan-400 mb-4">Tools & Tech</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>Metasploit</li>
+          <li>Nmap</li>
+          <li>Bash & Python</li>
+        </ul>
       </div>
     </div>
-    <!-- Navigation Buttons -->
-    <div class="nav-buttons">
-      <button class="nav-btn prev-btn">Previous</button>
-      <button class="nav-btn next-btn">Next</button>
-    </div>
-  </section>
-  
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-cards">
-      <!-- Active Directory Attack & Defense Project -->
-      <div class="project-card">
-        <div class="project-card-content">
-          <h3>Active Directory Attack & Defense Lab</h3>
-          <div class="tech-stack">
-            <span class="tech-tag">Windows Server</span>
-            <span class="tech-tag">AD CS</span>
-            <span class="tech-tag">PowerShell</span>
-            <span class="tech-tag">Siem</span>
-            <span class="tech-tag">Splunk</span>
-          </div>
-          <p>Enterprise-level red team/blue team exercise with real-world attack simulations:</p>
-          <ul class="project-details">
-            <li>✅ Built vulnerable AD environment with  user accounts</li>
-            <li>✅ Exploited DNS Poisoning (mitm6) and ADCS ESC15 vulnerabilities</li>
-            <li>✅ Implemented LAPS and Enhanced Security Audit Policies</li>
-            <li>✅ Reduced attack surface by 90% through GPO hardening</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/H3x0ra/CapstoneProject" class="project-link" target="_blank">
-              <i class='bx bxl-github'></i> GitHub Repo
-            </a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- QRB Learning Platform -->
-      <div class="project-card">
-        <div class="project-card-content">
-          <h3>QRB Web Security Learning Platform</h3>
-          <div class="tech-stack">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">OWASP Top 10</span>
-          </div>
-          <p>University capstone project - Interactive web security learning platform:</p>
-          <ul class="project-details">
-            <li>🔒 Integrated labs for SQLi, XSS, File Inclusion & Upload vulnerabilities</li>
-            <li>📚 150+ pages of educational content with real-world examples</li>
-            <li>👥 Collaborative project with 3 team members</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/H3x0ra/GraduateProject_VulnerableWebsite" class="project-link" target="_blank">
-              <i class='bx bxl-github'></i> GitHub Repo
-            </a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- SrScanner Tool -->
-      <div class="project-card">
-        <div class="project-card-content">
-          <h3>SrScanner - Network Reconnaissance Tool</h3>
-          <div class="tech-stack">
-            <span class="tech-tag">Bash</span>
-            <span class="tech-tag">Nmap</span>
-          </div>
-          <p>network scanning  and discovery tool:</p>
-          <ul class="project-details">
-            <li>  Network Discovery – Identify active devices in a local or custom network</li>
-            <li>Port Scanning – Scan all ports (1-65535) or specific ones.</li>
-            <li>Fast Execution – Runs scans in parallel for speed optimization.</li>
-            <li>Interactive Menu – Easy-to-use interface with clear options.</li>
-            <li>No External Dependencies – Uses built-in Bash tools (ping, nc).</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/H3x0ra/Sqr" class="project-link" target="_blank">
-              <i class='bx bxl-github'></i> GitHub Repo 
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="skills-container">
-      <h2>Technical Skills</h2>
-      
-      <!-- Offensive Security -->
-      <div class="skill-category">
-        <h3 class="category-title">Offensive Security</h3>
-        <div class="skill">
-          <h4>Penetration Testing</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
-          <p>90%</p>
-        </div>
-        <div class="skill">
-          <h4>Network Vulnerability Assessment</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 85%"></div>
-          </div>
-          <p>85%</p>
-        </div>
-        <div class="skill">
-          <h4>Active Directory Exploitation</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 88%"></div>
-          </div>
-          <p>88%</p>
-        </div>
-      </div>
-  
-      <!-- Defensive Security -->
-      <div class="skill-category">
-        <h3 class="category-title">Defensive Security</h3>
-        <div class="skill">
-          <h4>SIEM Implementation (Splunk)</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%"></div>
-          </div>
-          <p>80%</p>
-        </div>
-        <div class="skill">
-          <h4>Incident Response</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 75%"></div>
-          </div>
-          <p>75%</p>
-        </div>
-        <div class="skill">
-          <h4>Security Hardening</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 82%"></div>
-          </div>
-          <p>82%</p>
-        </div>
-      </div>
-  
-      <!-- Tools & Technologies -->
-      <div class="skill-category">
-        <h3 class="category-title">Tools & Technologies</h3>
-        <div class="skill">
-          <h4>Metasploit Framework</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 85%"></div>
-          </div>
-          <p>85%</p>
-        </div>
-        <div class="skill">
-          <h4>Nmap & Network Scanning</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
-          <p>90%</p>
-        </div>
-        <div class="skill">
-          <h4>Bash/Python Scripting</h4>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%"></div>
-          </div>
-          <p>80%</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <script>
-    // Hamburger menu toggle functionality (fixes the mobile nav)
-    const hamburger = document.getElementById('hamburger');
-    const navbarLinks = document.getElementById('navbarLinks');
-    hamburger.addEventListener('click', () => {
-      navbarLinks.classList.toggle('active');
-    });
+  </div>
+</section>
 
-    // Type effect for text
-    const typed = new Typed(".pro-text", {
-      strings: ["Penetration Testing", "Cyber Security", "Network Security", "Ethical Hacking"],
-      typeSpeed: 80,
-      backSpeed: 40,
-      backDelay: 1000,
-      loop: true
-    });
+<!-- CERTIFICATES -->
+<section id="certificates" class="py-24 border-t border-slate-800 text-center">
+  <h2 class="text-3xl font-semibold mb-8">Certificates</h2>
+  <img id="cert" src="IMAGES/Linux.jpg" class="mx-auto max-h-[420px] rounded-xl border border-cyan-400/40">
+</section>
 
-    // Slider Functionality for Certificates
-    let currentCert = 0;
-    const certificates = document.querySelectorAll('.certificate-card');
-    let certInterval;
+<footer class="py-8 text-center text-slate-500 border-t border-slate-800">
+  © 2026 Qasim Tawalbeh
+</footer>
 
-    function showCertificate(direction) {
-      certificates[currentCert].classList.remove('active');
-      if(direction === 'next') {
-        currentCert = (currentCert + 1) % certificates.length;
-      } else {
-        currentCert = (currentCert - 1 + certificates.length) % certificates.length;
-      }
-      certificates[currentCert].classList.add('active');
-    }
+<script>
+  new Typed("#typed", {
+    strings: [
+      "SOC Analyst",
+      "Active Directory Security",
+      "Incident Response",
+      "Ethical Hacking"
+    ],
+    typeSpeed: 60,
+    backSpeed: 40,
+    loop: true
+  });
 
-    // Auto-advance every 5 seconds
-    certInterval = setInterval(() => showCertificate('next'), 5000);
+  const certs = [
+    "IMAGES/Linux.jpg",
+    "IMAGES/LRSA.jpg",
+    "IMAGES/LRPA.jpg",
+    "IMAGES/CyberX.jpg",
+    "IMAGES/PEH.jpg"
+  ];
+  let i = 0;
+  setInterval(() => {
+    document.getElementById("cert").src = certs[i];
+    i = (i + 1) % certs.length;
+  }, 4000);
+</script>
 
-    // Button controls for Certificates
-    document.querySelector('.prev-btn').addEventListener('click', () => {
-      clearInterval(certInterval);
-      showCertificate('prev');
-      certInterval = setInterval(() => showCertificate('next'), 5000);
-    });
-
-    document.querySelector('.next-btn').addEventListener('click', () => {
-      clearInterval(certInterval);
-      showCertificate('next');
-      certInterval = setInterval(() => showCertificate('next'), 5000);
-    });
-
-    // Pause on hover for Certificates
-    document.querySelector('.certificates-container').addEventListener('mouseenter', () => {
-      clearInterval(certInterval);
-    });
-
-    document.querySelector('.certificates-container').addEventListener('mouseleave', () => {
-      certInterval = setInterval(() => showCertificate('next'), 5000);
-    });
-  </script>
-  
 </body>
 </html>
+
